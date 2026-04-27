@@ -14,6 +14,12 @@ npm run dev
 # Build for production
 npm run build
 
+# Run tests
+npm run test
+
+# Run tests in watch mode
+npm run test:watch
+
 # Preview production build
 npm run preview
 ```
@@ -124,6 +130,12 @@ style: {
 - ✅ **Component Registry**: Easy to extend with new components
 - ✅ **React Context**: Global state management
 - ✅ **Custom Hooks**: Reusable business logic
+
+### 🎯 Bonus Features ✅
+
+- ✅ **Add Pages by Config Only**: Edit `app-config.ts` to add new pages
+- ✅ **Theme Switching**: Theme toggle component with multiple themes
+- ✅ **Basic Tests**: Comprehensive test suite for hooks and components
 
 ## 🎯 Assessment Requirements
 

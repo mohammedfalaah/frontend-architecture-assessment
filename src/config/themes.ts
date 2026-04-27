@@ -19,12 +19,12 @@ export const lightTheme: ThemeConfig = {
     xl: '3rem'
   },
   typography: {
-    fontFamily: 'system-ui, -apple-system, sans-serif',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     fontSize: {
       sm: '0.875rem',
       md: '1rem',
       lg: '1.25rem',
-      xl: '1.5rem'
+      xl: '1.875rem'
     }
   }
 };
@@ -48,12 +48,12 @@ export const darkTheme: ThemeConfig = {
     xl: '3rem'
   },
   typography: {
-    fontFamily: 'system-ui, -apple-system, sans-serif',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     fontSize: {
       sm: '0.875rem',
       md: '1rem',
       lg: '1.25rem',
-      xl: '1.5rem'
+      xl: '1.875rem'
     }
   }
 };

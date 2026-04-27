@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useConfig } from '../hooks/useConfig';
 import { useTheme } from '../hooks/useTheme';
+import { ThemeToggle } from './ThemeToggle';
 
 export const Navigation = () => {
   const { getNavigationItems } = useConfig();
@@ -113,8 +114,9 @@ export const Navigation = () => {
           })}
         </ul>
 
-        {/* User indicator - responsive */}
+        {/* User indicator and theme toggle - responsive */}
         <div style={userStyles} className="nav-user">
+          <ThemeToggle />
           <span className="user-name">Falah.</span>
         </div>
       </div>
