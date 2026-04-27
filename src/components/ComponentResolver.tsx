@@ -47,7 +47,7 @@ export const ComponentResolver = ({ config }: ComponentResolverProps) => {
     console.warn(`Component type "${config.type}" not found`);
     
     // Show error in dev mode
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       return (
         <div style={{
           padding: '1rem',
