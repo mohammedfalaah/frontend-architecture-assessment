@@ -9,13 +9,13 @@ import './App.css';
 const AppContent = () => {
   const { theme } = useTheme();
 
-  // TODO: Maybe move this to a CSS class later for better performance
+  // Inline styles for now - could move to CSS later
   const appStyles = {
     fontFamily: theme.typography.fontFamily,
     backgroundColor: theme.colors.background,
     color: theme.colors.text,
     minHeight: '100vh',
-    transition: 'background-color 0.2s ease' // smooth theme transitions
+    transition: 'background-color 0.2s ease'
   };
 
   return (
@@ -25,7 +25,6 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<PageRenderer />} />
           <Route path="/:page" element={<PageRenderer />} />
-          {/* Catch-all route for 404s - handled by PageRenderer */}
           <Route path="*" element={<PageRenderer />} />
         </Routes>
       </main>

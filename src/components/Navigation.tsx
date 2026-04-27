@@ -114,10 +114,8 @@ export const Navigation = () => {
           })}
         </ul>
 
-        {/* User indicator and theme toggle - responsive */}
         <div style={userStyles} className="nav-user">
           <ThemeToggle />
-          <span className="user-name">Falah.</span>
         </div>
       </div>
     </nav>

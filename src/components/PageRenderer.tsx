@@ -18,14 +18,14 @@ export const PageRenderer = () => {
   // Get page configuration
   const pageConfig = getPageByPath(currentPath);
 
-  // Simulate loading state (in real app, this might be API calls)
+  // Simulate loading - remove this in production
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
       if (!pageConfig) {
-        setError(`Page "${currentPath}" not found in configuration`);
+        setError(`Page "${currentPath}" not found`);
       }
-    }, 300); // Short delay to show loading state
+    }, 300);
 
     return () => clearTimeout(timer);
   }, [pageConfig, currentPath]);

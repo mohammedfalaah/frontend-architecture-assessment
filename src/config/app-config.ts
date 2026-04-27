@@ -125,25 +125,25 @@ export const appConfig: AppConfig = {
                   { 
                     id: 1, 
                     name: 'ConfigUI Framework', 
-                    price: '$99/mo', 
+                    price: '₹2,499/mo', 
                     description: 'Complete config-driven UI framework with theming and components.' 
                   },
                   { 
                     id: 2, 
                     name: 'Design System', 
-                    price: '$79/mo', 
+                    price: '₹1,599/mo', 
                     description: 'Professional design system with 50+ components and documentation.' 
                   },
                   { 
                     id: 3, 
                     name: 'Dev Tools', 
-                    price: '$49/mo', 
+                    price: '₹1,299/mo', 
                     description: 'Essential development tools for linting, testing, and deployment.' 
                   },
                   {
                     id: 4,
                     name: 'Enterprise',
-                    price: '$299/mo',
+                    price: '₹8,299/mo',
                     description: 'Full enterprise solution with support and custom integrations.'
                   }
                 ]

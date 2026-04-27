@@ -1,38 +1,23 @@
 # React Config-Driven UI Application
 
-A React application built with Vite where the entire UI structure, content, and styling is controlled by configuration files rather than hardcoded JSX.
+A React app built with Vite where the UI is controlled by configuration files instead of hardcoded JSX.
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Run tests
-npm run test
-
-# Run tests in watch mode
-npm run test:watch
-
-# Preview production build
-npm run preview
 ```
 
-## 📋 Project Overview
+## What This Does
 
-This application demonstrates a config-driven architecture where:
-- All UI components are rendered dynamically from configuration
-- Page structure and content come from `src/config/app-config.ts`
-- No hardcoded JSX layouts or content
-- Theme and styling controlled via configuration
+This app shows how to build a config-driven UI where:
+- All pages come from a config file
+- Components are rendered dynamically 
+- Themes can be switched
+- No hardcoded layouts
 
-## 🏗️ Architecture
+## How It Works
 
 ### Core Concepts
 

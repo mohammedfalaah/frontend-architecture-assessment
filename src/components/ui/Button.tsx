@@ -26,6 +26,7 @@ export const Button = ({
   const [isPressed, setIsPressed] = useState(false);
 
   const getVariantStyles = () => {
+    // Base button styles
     const baseStyles = {
       border: 'none',
       cursor: disabled || loading ? 'not-allowed' : 'pointer',
@@ -34,6 +35,7 @@ export const Button = ({
       overflow: 'hidden' as const
     };
 
+    // Different button variants
     switch (variant) {
       case 'secondary':
         return {
@@ -58,7 +60,7 @@ export const Button = ({
           border: 'none',
           boxShadow: 'none'
         };
-      default: // primary
+      default:
         return {
           ...baseStyles,
           backgroundColor: getColor('primary'),
