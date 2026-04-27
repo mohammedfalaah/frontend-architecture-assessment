@@ -114,7 +114,7 @@ describe('ComponentResolver', () => {
     );
 
     expect(consoleSpy).toHaveBeenCalledWith(
-      '⚠️ Component type "UnknownComponent" not found in registry'
+      'Component type "UnknownComponent" not found'
     );
     
     consoleSpy.mockRestore();
