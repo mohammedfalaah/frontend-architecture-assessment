@@ -66,7 +66,7 @@ export const appConfig: AppConfig = {
                 {
                   type: 'Text',
                   props: { variant: 'heading', size: 'lg' },
-                  content: '🚀 Key Features'
+                  content: 'Key Features'
                 },
                 {
                   type: 'Text',
