@@ -26,7 +26,6 @@ export const Button = ({
   const [isPressed, setIsPressed] = useState(false);
 
   const getVariantStyles = () => {
-    // Base button styles
     const baseStyles = {
       border: 'none',
       cursor: disabled || loading ? 'not-allowed' : 'pointer',
@@ -35,7 +34,6 @@ export const Button = ({
       overflow: 'hidden' as const
     };
 
-    // Different button variants
     switch (variant) {
       case 'secondary':
         return {
@@ -84,7 +82,7 @@ export const Button = ({
           fontSize: getFontSize('lg'),
           borderRadius: '8px'
         };
-      default: // md
+      default:
         return {
           padding: `${getSpacing('sm')} ${getSpacing('md')}`,
           fontSize: getFontSize('md'),

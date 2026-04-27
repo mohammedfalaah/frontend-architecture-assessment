@@ -19,7 +19,6 @@ export const useTheme = () => {
   const createStyles = (styleConfig: Record<string, string>): CSSProperties => {
     const styles: CSSProperties = {};
     
-    // Process theme variables - bit messy but works
     Object.entries(styleConfig).forEach(([key, value]) => {
       if (value.startsWith('$colors.')) {
         const colorKey = value.replace('$colors.', '') as keyof typeof theme.colors;

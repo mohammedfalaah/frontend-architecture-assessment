@@ -12,13 +12,10 @@ export const PageRenderer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   
-  // Determine the current path
   const currentPath = page ? `/${page}` : '/';
   
-  // Get page configuration
   const pageConfig = getPageByPath(currentPath);
 
-  // Simulate loading - remove this in production
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -30,7 +27,6 @@ export const PageRenderer = () => {
     return () => clearTimeout(timer);
   }, [pageConfig, currentPath]);
 
-  // Loading state - responsive
   if (isLoading) {
     return (
       <Container padding="xl">
@@ -51,7 +47,6 @@ export const PageRenderer = () => {
     );
   }
 
-  // Error state - 404 page (responsive)
   if (error || !pageConfig) {
     return (
       <Container padding="xl">
@@ -92,7 +87,6 @@ export const PageRenderer = () => {
             </Button>
           </div>
 
-          {/* Debug info in development - responsive */}
           {typeof window !== 'undefined' && window.location.hostname === 'localhost' && (
             <div style={{ 
               marginTop: '3rem',
@@ -115,10 +109,8 @@ export const PageRenderer = () => {
     );
   }
 
-  // Success state - render the page (responsive)
   return (
     <div className="page-content fade-in">
-      {/* Set page title */}
       {typeof document !== 'undefined' && pageConfig.title && (
         <title>{pageConfig.title}</title>
       )}

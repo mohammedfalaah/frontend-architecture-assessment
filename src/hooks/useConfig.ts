@@ -4,7 +4,6 @@ import type { PageConfig } from '../types/config';
 export const useConfig = () => {
   const { config } = useAppContext();
 
-  // Helper functions for page management
   const getPageByPath = (path: string): PageConfig | undefined => {
     return config.pages.find(page => page.path === path);
   };

@@ -5,11 +5,9 @@ import { PageRenderer } from './components/PageRenderer';
 import { useTheme } from './hooks/useTheme';
 import './App.css';
 
-// Main app wrapper - handles theming and layout
 const AppContent = () => {
   const { theme } = useTheme();
 
-  // Inline styles for now - could move to CSS later
   const appStyles = {
     fontFamily: theme.typography.fontFamily,
     backgroundColor: theme.colors.background,

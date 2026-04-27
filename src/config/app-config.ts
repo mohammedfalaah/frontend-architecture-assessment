@@ -1,6 +1,5 @@
 import type { AppConfig } from '../types/config';
 
-// App configuration - controls the entire UI
 export const appConfig: AppConfig = {
   theme: {
     colors: {

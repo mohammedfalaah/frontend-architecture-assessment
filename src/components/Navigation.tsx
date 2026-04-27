@@ -12,7 +12,6 @@ export const Navigation = () => {
   
   const navItems = getNavigationItems();
 
-  // Add scroll effect for better UX
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -73,7 +72,7 @@ export const Navigation = () => {
     transition: 'all 0.15s ease',
     fontSize: '0.95rem',
     position: 'relative' as const,
-    minHeight: '44px', // Touch-friendly
+    minHeight: '44px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
