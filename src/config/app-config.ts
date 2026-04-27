@@ -160,7 +160,7 @@ export const appConfig: AppConfig = {
                 {
                   type: 'Text',
                   props: { variant: 'heading', size: 'lg' },
-                  content: 'Alex Johnson'
+                  content: 'Falah K'
                 },
                 {
                   type: 'Text',
@@ -171,17 +171,17 @@ export const appConfig: AppConfig = {
                 {
                   type: 'Text',
                   props: { variant: 'body' },
-                  content: '📧 alex.johnson@company.com'
+                  content: 'falahmkba@gmail.com'
                 },
                 {
                   type: 'Text',
                   props: { variant: 'body' },
-                  content: '🏢 Engineering Team Lead'
+                  content: 'Engineering Team Lead'
                 },
                 {
                   type: 'Text',
                   props: { variant: 'body' },
-                  content: '📍 San Francisco, CA',
+                  content: 'Kochi',
                   style: { marginBottom: '$spacing.md' }
                 }
               ]
