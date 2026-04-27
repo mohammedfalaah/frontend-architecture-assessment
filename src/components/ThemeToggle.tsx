@@ -84,7 +84,7 @@ export const ThemeToggle = () => {
         aria-label="Change theme"
         title={`Current theme: ${currentThemeName}`}
       >
-        <span>🎨</span>
+        <span>Theme</span>
         <span>{currentThemeName}</span>
         <span style={{ 
           transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', 

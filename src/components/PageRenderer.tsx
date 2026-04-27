@@ -55,7 +55,7 @@ export const PageRenderer = () => {
             fontSize: '4rem', 
             marginBottom: '1rem'
           }}>
-            🔍
+            
           </div>
           <Text variant="heading" size="xl" style={{ marginBottom: '1rem' }}>
             Page Not Found
@@ -83,7 +83,7 @@ export const PageRenderer = () => {
               variant="outline"
               onClick={() => window.location.href = '/'}
             >
-              🏠 Home
+              Home
             </Button>
           </div>
 
