@@ -1,18 +1,17 @@
 import type { AppConfig } from '../types/config';
 
-// Main app configuration - drives the entire UI structure
-// TODO: Consider moving this to a JSON file or external API later
+// App configuration - controls the entire UI
 export const appConfig: AppConfig = {
   theme: {
     colors: {
-      primary: '#2563eb', // Changed to a more professional blue
-      secondary: '#64748b',
+      primary: '#4f46e5',
+      secondary: '#6b7280', 
       background: '#ffffff',
-      surface: '#f8fafc',
-      text: '#1e293b',
-      textSecondary: '#64748b',
-      border: '#e2e8f0',
-      accent: '#059669' // Green for success states
+      surface: '#f9fafb',
+      text: '#111827',
+      textSecondary: '#6b7280',
+      border: '#e5e7eb',
+      accent: '#059669'
     },
     spacing: {
       xs: '0.5rem',
@@ -27,7 +26,7 @@ export const appConfig: AppConfig = {
         sm: '0.875rem',
         md: '1rem',
         lg: '1.25rem',
-        xl: '1.875rem' // Bigger heading size
+        xl: '1.875rem'
       }
     }
   },
@@ -41,7 +40,7 @@ export const appConfig: AppConfig = {
   pages: [
     {
       id: 'home',
-      title: 'Dashboard - Welcome',
+      title: 'ConfigUI - Home',
       path: '/',
       components: [
         {
@@ -51,32 +50,43 @@ export const appConfig: AppConfig = {
             {
               type: 'Text',
               props: { variant: 'heading', size: 'xl' },
-              content: 'Welcome to ConfigUI Pro'
+              content: 'Welcome to ConfigUI',
+              style: { 
+                textAlign: 'center',
+                marginBottom: '$spacing.md'
+              }
             },
             {
               type: 'Text',
-              props: { variant: 'body', size: 'md' },
-              content: 'A modern, configuration-driven React application that adapts to your needs. Built with performance and flexibility in mind.',
-              style: { marginBottom: '$spacing.lg' }
+              props: { variant: 'body', size: 'lg' },
+              content: 'A React application built with configuration-driven architecture. Change the entire UI by editing config files.',
+              style: { 
+                textAlign: 'center',
+                marginBottom: '$spacing.xl',
+                color: '$colors.textSecondary'
+              }
             },
             {
               type: 'Card',
               props: { padding: 'lg', shadow: true },
+              style: { marginBottom: '$spacing.lg' },
               children: [
                 {
                   type: 'Text',
                   props: { variant: 'heading', size: 'lg' },
-                  content: 'Key Features'
+                  content: 'Features',
+                  style: { marginBottom: '$spacing.md' }
                 },
                 {
                   type: 'Text',
                   props: { variant: 'body' },
-                  content: '• Dynamic component rendering from configuration\n• Responsive design system with consistent theming\n• Type-safe development with full TypeScript support\n• Modular architecture for easy maintenance\n• Performance optimized with React best practices'
+                  content: 'Config-driven components\nDynamic routing\nTheme system\nTypeScript support\nResponsive design'
                 },
                 {
                   type: 'Button',
                   props: { variant: 'primary', size: 'md' },
-                  content: 'Get Started →'
+                  content: 'Get Started',
+                  style: { marginTop: '$spacing.md' }
                 }
               ]
             }
@@ -86,7 +96,7 @@ export const appConfig: AppConfig = {
     },
     {
       id: 'products',
-      title: 'Product Catalog',
+      title: 'Products',
       path: '/products',
       components: [
         {
@@ -96,13 +106,17 @@ export const appConfig: AppConfig = {
             {
               type: 'Text',
               props: { variant: 'heading', size: 'xl' },
-              content: 'Our Products'
+              content: 'Products',
+              style: { marginBottom: '$spacing.md' }
             },
             {
               type: 'Text',
               props: { variant: 'body', size: 'md' },
-              content: 'Discover our range of developer tools and solutions designed to boost your productivity.',
-              style: { marginBottom: '$spacing.md' }
+              content: 'Check out our developer tools and solutions.',
+              style: { 
+                marginBottom: '$spacing.lg',
+                color: '$colors.textSecondary'
+              }
             },
             {
               type: 'ProductGrid',
@@ -111,26 +125,26 @@ export const appConfig: AppConfig = {
                   { 
                     id: 1, 
                     name: 'ConfigUI Framework', 
-                    price: '$299/year', 
-                    description: 'Complete configuration-driven UI framework with advanced theming and component system.' 
+                    price: '$99/mo', 
+                    description: 'Complete config-driven UI framework with theming and components.' 
                   },
                   { 
                     id: 2, 
-                    name: 'Design System Pro', 
-                    price: '$199/year', 
-                    description: 'Professional design system with 100+ components and comprehensive documentation.' 
+                    name: 'Design System', 
+                    price: '$79/mo', 
+                    description: 'Professional design system with 50+ components and documentation.' 
                   },
                   { 
                     id: 3, 
-                    name: 'Developer Tools Suite', 
-                    price: '$149/year', 
-                    description: 'Essential development tools including linting, testing, and deployment automation.' 
+                    name: 'Dev Tools', 
+                    price: '$49/mo', 
+                    description: 'Essential development tools for linting, testing, and deployment.' 
                   },
                   {
                     id: 4,
-                    name: 'Enterprise Support',
-                    price: '$999/year',
-                    description: 'Priority support, custom integrations, and dedicated account management for teams.'
+                    name: 'Enterprise',
+                    price: '$299/mo',
+                    description: 'Full enterprise solution with support and custom integrations.'
                   }
                 ]
               }
@@ -141,7 +155,7 @@ export const appConfig: AppConfig = {
     },
     {
       id: 'profile',
-      title: 'User Profile',
+      title: 'Profile',
       path: '/profile',
       components: [
         {
@@ -151,49 +165,52 @@ export const appConfig: AppConfig = {
             {
               type: 'Text',
               props: { variant: 'heading', size: 'xl' },
-              content: 'Profile Settings'
+              content: 'Profile',
+              style: { marginBottom: '$spacing.lg' }
             },
             {
               type: 'Card',
-              props: { padding: 'lg' },
+              props: { padding: 'lg', shadow: true },
+              style: { marginBottom: '$spacing.md' },
               children: [
                 {
                   type: 'Text',
                   props: { variant: 'heading', size: 'lg' },
-                  content: 'Falah K'
+                  content: 'Mohammed Falaah',
+                  style: { marginBottom: '$spacing.sm' }
                 },
                 {
                   type: 'Text',
                   props: { variant: 'body' },
-                  content: 'Senior Frontend Developer',
-                  style: { color: '$colors.textSecondary', marginBottom: '$spacing.sm' }
+                  content: 'Frontend Developer',
+                  style: { 
+                    color: '$colors.textSecondary',
+                    marginBottom: '$spacing.sm'
+                  }
                 },
                 {
                   type: 'Text',
                   props: { variant: 'body' },
-                  content: 'falahmkba@gmail.com'
+                  content: 'falahmkba@gmail.com',
+                  style: { marginBottom: '$spacing.sm' }
                 },
                 {
                   type: 'Text',
                   props: { variant: 'body' },
-                  content: 'Engineering Team Lead'
-                },
-                {
-                  type: 'Text',
-                  props: { variant: 'body' },
-                  content: 'Kochi',
+                  content: 'Kochi, India',
                   style: { marginBottom: '$spacing.md' }
                 }
               ]
             },
             {
               type: 'Card',
-              props: { padding: 'lg' },
+              props: { padding: 'lg', shadow: true },
               children: [
                 {
                   type: 'Text',
                   props: { variant: 'heading', size: 'lg' },
-                  content: 'Account Actions'
+                  content: 'Actions',
+                  style: { marginBottom: '$spacing.md' }
                 },
                 {
                   type: 'Button',
@@ -204,7 +221,7 @@ export const appConfig: AppConfig = {
                 {
                   type: 'Button',
                   props: { variant: 'outline', size: 'md' },
-                  content: 'Change Password'
+                  content: 'Settings'
                 }
               ]
             }

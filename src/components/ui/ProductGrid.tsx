@@ -21,24 +21,21 @@ export const ProductGrid = ({ products }: ProductGridProps) => {
 
   const gridStyles = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
     gap: getSpacing('lg'),
-    marginTop: getSpacing('lg'),
-    width: '100%'
+    marginTop: getSpacing('lg')
   };
 
-  const productCardStyles = {
+  const cardStyles = {
     display: 'flex',
     flexDirection: 'column' as const,
-    height: '100%',
-    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-    cursor: 'pointer'
+    height: '100%'
   };
 
   const priceStyles = {
-    fontSize: '1.5rem',
-    fontWeight: '700',
-    color: '#059669', // Success green
+    fontSize: '1.25rem',
+    fontWeight: '600',
+    color: '#059669',
     marginTop: 'auto',
     paddingTop: getSpacing('sm')
   };
@@ -54,85 +51,58 @@ export const ProductGrid = ({ products }: ProductGridProps) => {
     setLoadingStates(prev => ({ ...prev, [product.id]: true }));
     
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1200));
+    await new Promise(resolve => setTimeout(resolve, 1000));
     
     setLoadingStates(prev => ({ ...prev, [product.id]: false }));
-    
-    // Show some feedback (in a real app, you'd use a toast or notification)
-    console.log(`Added ${product.name} to cart!`);
-  };
-
-  const handleCardHover = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Only apply hover effects on non-touch devices
-    if (window.matchMedia('(hover: hover)').matches) {
-      e.currentTarget.style.transform = 'translateY(-4px)';
-      e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
-    }
-  };
-
-  const handleCardLeave = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.currentTarget.style.transform = 'translateY(0)';
-    e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+    console.log(`Added ${product.name} to cart`);
   };
 
   return (
-    <div style={gridStyles} className="product-grid responsive-grid">
+    <div style={gridStyles} className="product-grid">
       {products.map((product) => (
-        <div
-          key={product.id}
-          onMouseEnter={handleCardHover}
-          onMouseLeave={handleCardLeave}
-        >
-          <Card style={productCardStyles} padding="lg">
-            <div style={{ marginBottom: getSpacing('sm') }}>
-              <Text 
-                variant="heading" 
-                size="lg" 
-                style={{ marginBottom: getSpacing('xs') }}
-                className="product-title"
-              >
-                {product.name}
-              </Text>
-              <Text 
-                variant="body" 
-                style={{ 
-                  marginBottom: getSpacing('md'),
-                  lineHeight: '1.6',
-                  color: '#64748b'
-                }}
-                className="product-description"
-              >
-                {product.description}
-              </Text>
-            </div>
-            
-            <div style={{ marginTop: 'auto' }}>
-              <Text variant="body" style={priceStyles} className="product-price">
-                {product.price}
-              </Text>
-              
-              <div style={buttonGroupStyles} className="btn-group">
-                <Button 
-                  variant="primary" 
-                  size="md"
-                  loading={loadingStates[product.id]}
-                  onClick={() => handleAddToCart(product)}
-                  style={{ flex: 1, minWidth: '120px' }}
-                >
-                  {loadingStates[product.id] ? 'Adding...' : 'Add to Cart'}
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="md"
-                  onClick={() => console.log(`View details for ${product.name}`)}
-                  style={{ minWidth: '80px' }}
-                >
-                  Details
-                </Button>
-              </div>
-            </div>
-          </Card>
-        </div>
+        <Card key={product.id} style={cardStyles} padding="lg">
+          <Text 
+            variant="heading" 
+            size="lg" 
+            style={{ marginBottom: getSpacing('sm') }}
+          >
+            {product.name}
+          </Text>
+          
+          <Text 
+            variant="body" 
+            style={{ 
+              marginBottom: getSpacing('md'),
+              color: '#6b7280',
+              lineHeight: '1.5'
+            }}
+          >
+            {product.description}
+          </Text>
+          
+          <Text variant="body" style={priceStyles}>
+            {product.price}
+          </Text>
+          
+          <div style={buttonGroupStyles} className="btn-group">
+            <Button 
+              variant="primary" 
+              size="md"
+              loading={loadingStates[product.id]}
+              onClick={() => handleAddToCart(product)}
+              style={{ flex: 1 }}
+            >
+              {loadingStates[product.id] ? 'Adding...' : 'Add to Cart'}
+            </Button>
+            <Button 
+              variant="outline" 
+              size="md"
+              onClick={() => console.log(`View ${product.name} details`)}
+            >
+              Details
+            </Button>
+          </div>
+        </Card>
       ))}
     </div>
   );

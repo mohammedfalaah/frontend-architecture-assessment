@@ -82,6 +82,21 @@ export const ComponentResolver = ({ config }: ComponentResolverProps) => {
     ...(config.style && { style: createStyles(config.style) })
   };
 
+  // Add default onClick handlers for buttons if not provided
+  if (config.type === 'Button' && !props.onClick) {
+    props.onClick = () => {
+      console.log(`Button clicked: "${config.content || 'Button'}"`);
+      // You can add more default behavior here
+      if (config.content === 'Get Started →') {
+        console.log('🚀 Getting started with ConfigUI!');
+      } else if (config.content === 'Edit Profile') {
+        console.log('✏️ Opening profile editor...');
+      } else if (config.content === 'Change Password') {
+        console.log('🔒 Opening password change form...');
+      }
+    };
+  }
+
   // Handle content prop for text-based components
   if (config.content) {
     props.children = config.content;

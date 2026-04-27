@@ -59,8 +59,8 @@ export const Navigation = () => {
     margin: 0,
     padding: 0,
     gap: getSpacing('sm'),
-    flexWrap: 'wrap' as const,
-    justifyContent: 'center'
+    flexWrap: 'nowrap' as const,
+    alignItems: 'center'
   };
 
   const getLinkStyles = (isActive: boolean) => ({
